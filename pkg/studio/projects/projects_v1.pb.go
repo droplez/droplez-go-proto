@@ -6,10 +6,10 @@
 // 	protoc        v3.15.7
 // source: studio/projects/projects_v1.proto
 
-package proto_projects
+package projects
 
 import (
-	proto_common "github.com/droplez/droplez-go-proto/pkg/proto_common"
+	common "github.com/droplez/droplez-go-proto/pkg/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -285,7 +285,7 @@ type ListOptions struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Paging *proto_common.Paging `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
+	Paging *common.Paging `protobuf:"bytes,1,opt,name=paging,proto3" json:"paging,omitempty"`
 }
 
 func (x *ListOptions) Reset() {
@@ -320,7 +320,7 @@ func (*ListOptions) Descriptor() ([]byte, []int) {
 	return file_studio_projects_projects_v1_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ListOptions) GetPaging() *proto_common.Paging {
+func (x *ListOptions) GetPaging() *common.Paging {
 	if x != nil {
 		return x.Paging
 	}
@@ -382,12 +382,11 @@ var file_studio_projects_projects_v1_proto_rawDesc = []byte{
 	0x01, 0x12, 0x35, 0x0a, 0x06, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12, 0x15, 0x2e, 0x70, 0x72,
 	0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x6e,
 	0x66, 0x6f, 0x1a, 0x14, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x45, 0x6d, 0x70, 0x74,
-	0x79, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x3f, 0x5a, 0x3d, 0x67, 0x69, 0x74, 0x68,
+	0x79, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68,
 	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64, 0x72, 0x6f, 0x70, 0x6c, 0x65, 0x7a, 0x2f, 0x64,
 	0x72, 0x6f, 0x70, 0x6c, 0x65, 0x7a, 0x2d, 0x67, 0x6f, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f,
-	0x70, 0x6b, 0x67, 0x2f, 0x73, 0x74, 0x75, 0x64, 0x69, 0x6f, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x5f, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x70, 0x6b, 0x67, 0x2f, 0x73, 0x74, 0x75, 0x64, 0x69, 0x6f, 0x2f, 0x70, 0x72, 0x6f, 0x6a, 0x65,
+	0x63, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -405,13 +404,13 @@ func file_studio_projects_projects_v1_proto_rawDescGZIP() []byte {
 var file_studio_projects_projects_v1_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_studio_projects_projects_v1_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_studio_projects_projects_v1_proto_goTypes = []interface{}{
-	(DAW)(0),                          // 0: projects.DAW
-	(*ProjectId)(nil),                 // 1: projects.ProjectId
-	(*ProjectInfo)(nil),               // 2: projects.ProjectInfo
-	(*ProjectMeta)(nil),               // 3: projects.ProjectMeta
-	(*ListOptions)(nil),               // 4: projects.ListOptions
-	(*proto_common.Paging)(nil),       // 5: common.Paging
-	(*proto_common.EmptyMessage)(nil), // 6: common.EmptyMessage
+	(DAW)(0),                    // 0: projects.DAW
+	(*ProjectId)(nil),           // 1: projects.ProjectId
+	(*ProjectInfo)(nil),         // 2: projects.ProjectInfo
+	(*ProjectMeta)(nil),         // 3: projects.ProjectMeta
+	(*ListOptions)(nil),         // 4: projects.ListOptions
+	(*common.Paging)(nil),       // 5: common.Paging
+	(*common.EmptyMessage)(nil), // 6: common.EmptyMessage
 }
 var file_studio_projects_projects_v1_proto_depIdxs = []int32{
 	1, // 0: projects.ProjectInfo.id:type_name -> projects.ProjectId
