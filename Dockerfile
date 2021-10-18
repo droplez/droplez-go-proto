@@ -1,6 +1,6 @@
 FROM alpine:3.14.0
 
-RUN apk add --no-cache git make musl-dev go protobuf
+RUN apk add --no-cache git make musl-dev go protobuf protobuf-dev
 ENV GOROOT /usr/lib/go
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
