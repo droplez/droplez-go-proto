@@ -31,7 +31,7 @@ func NewUploaderClient(cc grpc.ClientConnInterface) UploaderClient {
 }
 
 func (c *uploaderClient) Upload(ctx context.Context, opts ...grpc.CallOption) (Uploader_UploadClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Uploader_ServiceDesc.Streams[0], "/droplez_uploader.Uploader/Upload", opts...)
+	stream, err := c.cc.NewStream(ctx, &Uploader_ServiceDesc.Streams[0], "/uploader.Uploader/Upload", opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func (x *uploaderUploadClient) CloseAndRecv() (*UploadedFileData, error) {
 
 func (c *uploaderClient) GetDownloadableLink(ctx context.Context, in *UploadedFileData, opts ...grpc.CallOption) (*DownloadableLink, error) {
 	out := new(DownloadableLink)
-	err := c.cc.Invoke(ctx, "/droplez_uploader.Uploader/GetDownloadableLink", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/uploader.Uploader/GetDownloadableLink", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -141,7 +141,7 @@ func _Uploader_GetDownloadableLink_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/droplez_uploader.Uploader/GetDownloadableLink",
+		FullMethod: "/uploader.Uploader/GetDownloadableLink",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UploaderServer).GetDownloadableLink(ctx, req.(*UploadedFileData))
@@ -153,7 +153,7 @@ func _Uploader_GetDownloadableLink_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Uploader_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "droplez_uploader.Uploader",
+	ServiceName: "uploader.Uploader",
 	HandlerType: (*UploaderServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
